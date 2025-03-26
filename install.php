@@ -1,0 +1,1 @@
+<?php $connection = new PDO(); ?>
