@@ -3,9 +3,9 @@
 * Open a connection via PDO to create a new database and table with
 * structure. */
 if (isset($_POST['submit'])) {
-        require "../config.php";
-        try {
-            $connection = new PDO($dsn, $username, $password, $options);
+    require "config.php";
+    try {
+        $connection = new PDO($dsn, $username, $password, $options);
        
         } catch(PDOException $error) {
             echo $sql . "<br>" . $error->getMessage();
