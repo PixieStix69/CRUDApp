@@ -18,7 +18,10 @@ if (isset($_POST['submit'])) {
         "age" => $_POST['age'],
         "location" => $_POST['location']
         );
-        
-    $sql = sprintf( "INSERT INTO %s (%s) values (%s)", "users", implode(", ",
-    array_keys($new_user)), ":" . implode(", :", array_keys($new_user)) );
+
+        $sql = sprintf( "INSERT INTO %s (%s) values (%s)", "users", implode(", ",
+        array_keys($new_user)), ":" . implode(", :", array_keys($new_user)) );
+        $statement = $connection->prepare($sql);
+        $statement->execute($new_user);
+    
 ?>
