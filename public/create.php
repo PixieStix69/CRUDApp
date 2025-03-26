@@ -6,11 +6,11 @@
             require_once '../src/DBconnect.php';
 
             $new_user = array(
-                "firstname" => $_POST['firstname'],
-                "lastname" => $_POST['lastname'],
-                "email" => $_POST['email'],
-                "age" => $_POST['age'],
-                "location" => $_POST['location']
+                "firstname" => escape($_POST['firstname']),
+                "lastname" => escape($_POST['lastname']),
+                "email" => escape($_POST['email']),
+                "age" => escape($_POST['age']),
+                "location" => escape($_POST['location'])
             );
 
             $sql = sprintf("INSERT INTO %s (%s) values (%s)", "users",
