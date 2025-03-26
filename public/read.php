@@ -3,7 +3,6 @@ if (isset($_POST['submit'])) {
     try {
         require "../common.php";
         require_once '../src/DBconnect.php';
-        
         $sql = "SELECT *
         FROM users
         WHERE location = :location";
@@ -11,7 +10,7 @@ if (isset($_POST['submit'])) {
         $statement = $connection->prepare($sql);
         $statement->bindParam(':location', $location, PDO::PARAM_STR);
         $statement->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll();
 
 
 
