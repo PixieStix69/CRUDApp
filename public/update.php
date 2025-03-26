@@ -6,9 +6,11 @@
         require "../common.php";
         require_once '../src/DBconnect.php';
         $sql = "SELECT * FROM users";
+
         $statement = $connection->prepare($sql);
         $statement->execute();
         $result = $statement->fetchAll();
+
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
@@ -39,8 +41,8 @@
         <td><?php echo escape($row["age"]); ?></td>
         <td><?php echo escape($row["location"]); ?></td>
         <td><?php echo escape($row["date"]); ?> </td>
-        <td><a href="update-single.php?id=<?php echo escape($row["id"]);
-        ?>">Edit</a></td>
+        <td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+        <td><a href="delete.php?id=<?php echo escape($row["id"]); ?> "> Delete </a></td>
         </tr>
 
 <?php endforeach; ?>
