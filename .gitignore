@@ -1,0 +1,14 @@
+# Ignore PHPStorm and VSCode project files
+.idea/
+.vscode/
+
+# Ignore node_modules and vendor directories
+node_modules/
+vendor/
+
+# Ignore environment files
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
