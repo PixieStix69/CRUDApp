@@ -19,4 +19,18 @@ if (isset($_POST['submit'])) {
         echo $sql . "<br>" . $error->getMessage();
     }
 }
+if (isset($_POST['submit'])) {
+    if ($result && $statement->rowCount() > 0) {
+    // open table
+    foreach ($result as $row) {
+    // table contents
+    }
+    // close table
+    } else {
+    // no results
+    }
+}
+
+
+
 ?>
